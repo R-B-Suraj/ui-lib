@@ -1,0 +1,38 @@
+.dropdown .trigger{
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+    position: relative;
+    cursor: pointer;
+}
+/* position is relative because we are going to add content position absolute relative to this */
+
+
+
+.dropdown .trigger::after{
+    content:">";
+    display: inline-block;
+    position: absolute;
+    right: 15px;
+    transform: rotate(90deg) scale(0.5, 1);
+    font-weight: bold;
+    transition: transform 0.3s;
+
+}
+/* after pseudo class allows us to add some content after a certain element
+the content we want to add is a '>' after the text inside trigger all way to right  */
+
+
+.dropdown .trigger.active::after{
+    transform: rotate(-90deg) scale(0.5,1);
+}
+/* the after element which is the > symbol here that is now after the element having 
+class dropdown trigger active  rotates up after we click*/
+
+
+.dropdown .content{
+    display: none;
+}
+
+.dropdown .content.active{
+    display: block;
+}

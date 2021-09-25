@@ -1,0 +1,62 @@
+.tooltip{
+    position: relative;
+    display: inline-block;
+    color: #ff6565;
+    border-bottom: 1px dotted #ff6565;
+    cursor: help;
+}
+/* position relative is given because we are going to position tip  inside it using absolutel position */
+
+.tip{
+    visibility: hidden;
+    width: 150px;
+    background-color: #ff6565;
+    color: #fff;
+    text-align: center;
+    border-radius: 10px;
+    padding: 5px 0;
+    position: absolute;
+    bottom: 120%;
+    /* above the tooptip  120% */
+    left: 50%;
+    margin-left: -75px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    /* opacity is 0 to start with and we are transitioning the opacity when it changes in 0.3s 
+       while it is active it is changing to 1*/
+
+}
+
+
+
+
+.tip.active{
+    visibility: visible;
+    opacity: 1;
+}
+
+.tip::after{
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -4px;
+    border-width: 4px;
+    border-style: solid;
+    border-color: transparent;
+    border-top-color: #ff6565;
+}
+/* after is a pseudo class  which is allowing 
+   us to enter some content which is currently empty 
+   this is a css trick to make a triangle at the bottom
+   */
+
+
+
+
+
+
+
+
+
+   
